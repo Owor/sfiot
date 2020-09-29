@@ -1,0 +1,4 @@
+function docker_ip() {
+   sudo docker inspect --format '{{ .NetworkSettings.IPAddress }}' $1
+}
+

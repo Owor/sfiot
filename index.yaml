@@ -1,0 +1,23 @@
+apiVersion: v1
+entries:
+  sfiot-chart:
+  - apiVersion: v2
+    created: "2020-09-30T04:37:42.6784458+08:00"
+    description: A simple chart for the iot project being worked on
+    digest: 813598a656b95b5ae38152a57aa6ce0960e8c91c86de4618b7e16226a8c87450
+    name: sfiot-chart
+    type: application
+    urls:
+    - https://github.com/Owor/sfiot.git/code-data/sfiot-chart-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2020-09-30T04:37:42.67774888+08:00"
+    description: A Helm chart for Kubernetes project for iot group
+    digest: 6ab63a08bd4a4ac01c77253ca9c806d83bcc665042e623b9ca5282f728037fb7
+    name: sfiot-chart
+    type: application
+    urls:
+    - https://github.com/Owor/sfiot.git/sfiot-chart-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-09-30T04:37:42.676383195+08:00"

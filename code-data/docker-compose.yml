@@ -1,0 +1,32 @@
+version: '1'
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  sfiot:
+    image: owor/sfiot:1.0.1
+    networks:
+      - worker01
+
+
+#  nginx:
+#    image: 'bitnami/nginx:1.12.0-r2'
+#    depends_on:
+#      - sfiot
+#    networks:
+#      - app-tier
+#    ports:
+#      - '8000:8000'
+#      - '65432:65432'
+#    volumes:
+#      - ./vhosts:/bitnami/nginx/conf/vhosts
+#  mariadb:
+#    image: bitnami/mariadb:latest
+#    environment:
+#        - MARIADB_USER=mini
+#        - MARIADB_PASSWORD=mini
+#        - MARIADB_DATABASE=mini
+#        - ALLOW_EMPTY_PASSWORD=yes
+
