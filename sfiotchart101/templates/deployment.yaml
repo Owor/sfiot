@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "sfiot-chart.fullname" . }}
+  name: {{ include "sfiotchart101.fullname" . }}
   labels:
-    {{- include "sfiot-chart.labels" . | nindent 4 }}
+    {{- include "sfiotchart101.labels" . | nindent 4 }}
 spec:
 {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
 {{- end }}
   selector:
     matchLabels:
-      {{- include "sfiot-chart.selectorLabels" . | nindent 6 }}
+      {{- include "sfiotchart101.selectorLabels" . | nindent 6 }}
   template:
     metadata:
     {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
     {{- end }}
       labels:
-        {{- include "sfiot-chart.selectorLabels" . | nindent 8 }}
+        {{- include "sfiotchart101.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "sfiot-chart.serviceAccountName" . }}
+      serviceAccountName: {{ include "sfiotchart101.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -59,12 +59,3 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-
-volumes:
-  - name: config
-    configMap:
-      name: nginx-config
-volumeMounts:
-  - name: config
-    mountPath: /etc/nginx/nginx.conf
-    subPath: nginx.conf

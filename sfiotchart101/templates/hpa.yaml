@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "sfiot-chart.fullname" . }}
+  name: {{ include "sfiotchart101.fullname" . }}
   labels:
-    {{- include "sfiot-chart.labels" . | nindent 4 }}
+    {{- include "sfiotchart101.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "sfiot-chart.fullname" . }}
+    name: {{ include "sfiotchart101.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:
